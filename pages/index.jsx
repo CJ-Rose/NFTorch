@@ -1,9 +1,13 @@
+import { use, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 // import Wallet from '..components/Wallet'
 
+let sets = [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4],]
+
 export default function Home() {
+  const [CodeAccepted, setCodeAccepted] = useState(false)
   return (
     <div>
       <Head>
@@ -45,6 +49,61 @@ export default function Home() {
               <p>"some kind of style with some color and some object"</p>
             </div>
           </div>
+
+          <div className='flex justify-center my-16'>
+            <div className='bg-black text-white rounded-lg mr-5 p-5'>
+              <p className='pb-3'>enter access code:</p>
+              <div className='flex'>
+                <input className='w-full'></input>
+              </div>                      
+            </div>
+
+            <div className='bg-black text-white rounded-lg ml-5 p-5'>
+              <p className='pb-3'>add your contributions to the prompt:</p>
+              {CodeAccepted ? (
+                <input className='w-full'></input>
+              ) : (
+                <input className='w-full cursor-not-allowed'></input>
+              )}
+            </div>
+          </div>
+
+          <div className='my-16'>
+            <div className='flex justify-center items-center'>
+              <div className='bg-black h-[3px] w-[35%]'></div>
+              <div className='text-2xl font-bold py-10 px-4'>
+                NFTorch Gallery
+              </div>
+              <div className='bg-black h-[3px] w-[35%]'></div>
+            </div>
+            
+            <div className="grid grid-cols-3 w-full px-[10%] justify-items-center">
+              {sets.map((set) => {
+                return (
+                  <div className="h-[300px] w-[300px] border-4 border-black rounded-lg mb-16">
+                    <div className='flex'>
+                      <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
+                        {set[0]}
+                      </div>
+                      <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
+                        {set[1]}
+                      </div>
+                    </div>
+                    <div className='flex'>
+                      <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
+                        {set[2]}
+                      </div>
+                      <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
+                        {set[3]}
+                      </div>
+                    </div>
+                    
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
         </body>
 
         <footer className="flex flex-row justify-center bg-black text-white w-full fixed bottom-0">
