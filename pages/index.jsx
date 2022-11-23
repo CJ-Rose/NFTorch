@@ -1,8 +1,9 @@
-import { use, useState } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 // import Wallet from '..components/Wallet'
+import SetCard from '../components/SetCard'
 
 let sets = [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4],]
 
@@ -76,6 +77,7 @@ export default function Home() {
             display next access code here after input accepted
           </div>
 
+          {/* Display NFT Gallery */}
           <div className='my-16'>
             <div className='flex justify-center items-center'>
               <div className='bg-black h-[3px] w-[35%]'></div>
@@ -88,25 +90,7 @@ export default function Home() {
             <div className="grid grid-cols-3 w-full px-[10%] justify-items-center">
               {sets.map((set) => {
                 return (
-                  <div className="h-[300px] w-[300px] border-4 border-green-600 rounded-lg mb-16">
-                    <div className='flex'>
-                      <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
-                        {set[0]}
-                      </div>
-                      <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
-                        {set[1]}
-                      </div>
-                    </div>
-                    <div className='flex'>
-                      <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
-                        {set[2]}
-                      </div>
-                      <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
-                        {set[3]}
-                      </div>
-                    </div>
-                    
-                  </div>
+                  <SetCard set={set} />
                 );
               })}
             </div>
