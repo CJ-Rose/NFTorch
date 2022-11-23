@@ -27,7 +27,7 @@ export default function Home() {
             {/* <Wallet /> */}
           </div>
           <div className='bg-black h-[3px] w-[90%] ml-[5%] mt-2'></div>
-          <div className='bg-black h-[2px] w-[80%] ml-[10%] mt-1'></div>
+          <div className='bg-green-600 h-[2px] w-[80%] ml-[10%] mt-1'></div>
         </header>
 
         <body>
@@ -68,6 +68,14 @@ export default function Home() {
             </div>
           </div>
 
+          <div className='flex justify-center '>
+            <button className='bg-green-600 rounded-lg py-2 px-4'>add to prompt</button>
+          </div>
+
+          <div className='text-green-600 text-center'>
+            display next access code here after input accepted
+          </div>
+
           <div className='my-16'>
             <div className='flex justify-center items-center'>
               <div className='bg-black h-[3px] w-[35%]'></div>
@@ -80,7 +88,7 @@ export default function Home() {
             <div className="grid grid-cols-3 w-full px-[10%] justify-items-center">
               {sets.map((set) => {
                 return (
-                  <div className="h-[300px] w-[300px] border-4 border-black rounded-lg mb-16">
+                  <div className="h-[300px] w-[300px] border-4 border-green-600 rounded-lg mb-16">
                     <div className='flex'>
                       <div className='m-2 h-[130px] w-[130px] border-2 border-black rounded-lg'>
                         {set[0]}
